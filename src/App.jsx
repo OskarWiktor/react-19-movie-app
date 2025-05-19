@@ -1,6 +1,8 @@
-import React from 'react'
+import Search from './ui/Search.jsx'
+import { useState } from 'react'
 
 export default function App(props) {
+  const [searchTerm, setSearchTerm] = useState('');
   
   return (
     <main>
@@ -8,9 +10,14 @@ export default function App(props) {
 
       <div className='wrapper'>
         <header>
-          <h1>Find <span className='text-gradient'>Movie</span>You'll Enjoy Without the Hassle</h1>
+          <img src='hero.png' alt='Hero Banner' />
+          <h1>Find <span className='text-gradient'>Movies</span>You'll Enjoy Without the Hassle</h1>
         </header>
+
+        <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <h1 className='text-white'>{searchTerm}</h1>
       </div>
     </main>
   )
 }
+
